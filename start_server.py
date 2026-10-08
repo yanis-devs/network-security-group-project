@@ -6,7 +6,7 @@ from py_http_server import app_main
 app_main(
     handler_chain=DefaultMiddleware(
         DigestAuthMiddleware(
-            next=FileRouter("."), pwdfile = "passwords.txt"
+            next=FileRouter("."), pwdfile="passwords.txt"
         )
     ),
    http_listeners=[
