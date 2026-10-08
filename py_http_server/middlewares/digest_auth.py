@@ -41,18 +41,8 @@ def read_passwords_file(pwdfile):
 
 class DigestAuthMiddleware(RequestHandlerABC):
     # This checks the "Authorization: Digest ..." header on each request.
-    #
-    # How it works:
-    # The client never sends the actual password, it sends a hash that proves
-    # it KNOWS the password, without sending the password itself.
-    # We calculate the same hash on our side using the password file, and if
-    # they match, the user is authenticated.
-    #
-    # Important: passwords.txt stores SHA256(password), not the plain password.
-    # So instead of using the real password when we build our hash, we just use
-    # that stored SHA256 value directly as a stand-in for the password. The
-    # client has to do the exact same thing (see client.py), otherwise the
-    # hashes won't match.
+    # The client never sends the actual password, it sends a hash to show it knows the password without 
+    # actually sending the password itself. If the hash matches, teh user is authenticated.
 
     def __init__(self, next, pwdfile):
         self.next = next
