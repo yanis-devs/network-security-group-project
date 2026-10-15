@@ -84,4 +84,62 @@ if(status_code == 401):
         key, value = piece.split("=", 1)
         params[key.strip()] = value.strip().strip('"')
 
-    if(scheme == "digest"):
+
+if scheme == "digest":
+        realm = params.get("realm")
+        nonce = params.get("nonce")
+        uri = "/"
+        method = "GET"
+
+        # 1. Calculate HA1 using the client's hashed_password
+        ha1_input = f"{username}:{realm}:{hashed_password}"
+        ha1 = hashlib.md5(ha1_input.encode("utf-8")).hexdigest()
+
+        # 2. Calculate HA2
+        ha2_input = f"{method}:{uri}"
+        ha2 = hashlib.md5(ha2_input.encode("utf-8")).hexdigest()
+
+        # 3. Calculate the final response digest
+        response_input = f"{ha1}:{nonce}:{ha2}"
+        response_hash = hashlib.md5(response_input.encode("utf-8")).hexdigest()
+
+        # 4. Construct the Authorization header string matching server expectations
+        auth_header_value = (
+            f'Digest username="{username}", '
+            f'realm="{realm}", '
+            f'nonce="{nonce}", '
+            f'uri="{uri}", '
+            f'response="{response_hash}"'
+        )
+
+        # 5. Build and send the second (authenticated) request
+        second_request = (
+            f"GET {uri} HTTP/1.1\r\n"
+            f"Host: {HOST}:{PORT}\r\n"
+            f"Authorization: {auth_header_value}\r\n"
+            "Connection: close\r\n"
+            "\r\n"
+        )
+
+        print("\n--- Sending Authenticated Request ---")
+        final_text = send_request(second_request)
+        print(final_text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
