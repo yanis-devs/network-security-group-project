@@ -1,4 +1,5 @@
 # Yanis's Contribution:
+# When testing the server, please use the provided example of a valid login's credentials: Username = alice, Password = mushroom
 import hashlib  # Library supplies hashing algorithms
 import socket   # Library supplies endpoint sockets
 import sys      # Library supplies functions for exiting the script
