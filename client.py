@@ -1,4 +1,4 @@
-
+# Yanis's Contribution:
 import hashlib  # Library supplies hashing algorithms
 import socket   # Library supplies endpoint sockets
 import sys      # Library supplies functions for exiting the script
