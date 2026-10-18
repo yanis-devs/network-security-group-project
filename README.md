@@ -1,7 +1,11 @@
-# py-http-server
+# Network Security Group Project - Client Module
 
-## About
-This project implements an HTTP(S) server supporting HTTP versions 1.0 and 1.1.
+> **⚠️ Group Project Notice:** This repository is part of a collaborative group project. The core HTTP/HTTPS server architecture and middlewares were built collaboratively by our team. **My primary and specific contribution to this project is the `client.py` implementation**, designed to test and interact with this server. It is hosted here so that the full system can be run and tested together.
+
+---
+
+## About the Overall Project
+This project implements an HTTP(S) server supporting HTTP versions 1.0 and 1.1
 
 ## Configuration Examples
 To configure the server, `py_http_server.app_main()` can be called from a Python script with custom arguments.
