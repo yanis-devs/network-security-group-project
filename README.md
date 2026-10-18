@@ -1,6 +1,20 @@
-# Network Security Group Project - Client Module
+# Python HTTP/S Server & Client Module
 
-> **⚠️ Group Project Notice:** This repository is part of a collaborative group project. The core HTTP/HTTPS server architecture and middlewares were built collaboratively by our team. **My primary and specific contribution to this project is the `client.py` implementation**, designed to test and interact with this server. It is hosted here so that the full system can be run and tested together.
+> **⚠️ Group Project Notice:** This repository is part of a collaborative team project implementing an HTTP/1.0 and HTTP/1.1 server. The core server architecture and middlewares were built collaboratively. **My specific contribution to this project is the `client.py` implementation**, which handles socket communication, parsing, and Digest Authentication. It is hosted here along with the server code for seamless live testing.
+
+---
+
+## 🚀 Live Test in Browser (No Setup Required!)
+You can test this console-based project instantly in your browser using GitHub Codespaces—no local Python installation needed:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/yanis-devs/network-security-group-project)
+
+### How to Run:
+1. Click the **Open in Codespaces** button above.
+2. Once the cloud terminal opens, run the following commands:
+   ```bash
+   python client.py
+   
 **⚠️When testing the server, please use the provided example of a valid login's credentials: Username = alice, Password = mushroom**
 
 ---
