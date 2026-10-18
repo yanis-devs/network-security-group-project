@@ -1,12 +1,12 @@
-import subprocess
-import time
-import sys
+import subprocess # Additional
+import time # Additional
+import sys # Library supplies function to exit system
 import hashlib  # Library supplies hashing algorithms
 import socket   # Library supplies endpoint sockets
 
 # --- AUTOMATIC SERVER LAUNCHER ---
 # Automatically starts your server script in the background before running client requests
-SERVER_SCRIPT = "server.py"  # Change this if your server file has a different name
+SERVER_SCRIPT = "start_server.py" 
 
 print(f"Starting server ({SERVER_SCRIPT}) in the background...")
 server_process = subprocess.Popen([sys.executable, SERVER_SCRIPT])
